@@ -97,7 +97,7 @@ def clean_description(tag):
     #si pb avec données vides essayer un if else comme pour area
     #e.g. if not tag: description = "" return description else: description=tag.test.strip() return description
     # peut être moins complexe en terme de logique que le if else de la compréhension de liste. 
-"""
+
 
 def main():
     pages=get_pages(start = 1, stop = 2)
@@ -106,3 +106,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+"""
