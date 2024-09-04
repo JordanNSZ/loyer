@@ -1,0 +1,34 @@
+name: Run BigQuery Query
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  query:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install google-cloud-bigquery
+
+      - name: Authenticate with Google Cloud using OIDC
+        id: auth
+        uses: google-github-actions/auth@v0
+        with:
+          token_format: 'access_token'
+          audience: 'https://iam.googleapis.com/projects/loyer-43000/locations/global/workloadIdentityPools/loyer-identiy-workload/providers/github-loyer-provider'
+
+      - name: Run BigQuery Query Script
+        run: |
+          python load.py
+    
