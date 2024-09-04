@@ -1,0 +1,9 @@
+pandas
+numpy
+selenium<4
+bs4
+pyyaml
+requests>=2.9.1
+urllib3<2.0.2
+SQLAlchemy
+psycopg2

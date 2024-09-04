@@ -1,0 +1,5 @@
+*.log
+ELT
+user_agents
+click_button_pagesuivante.py
+rapport_avancement.py
